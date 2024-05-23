@@ -1,0 +1,16 @@
+/*
+  http://localhost:8000/polls/ の質問の色が変わる（li の a）
+*/
+li a {
+    color: green;
+}
+
+
+/*
+polls/static/polls/images/background.jpg
+を背景画像にする（http://localhost:8000/polls/）。
+*/
+
+body {
+    background: white url("images/background.jpg") no-repeat;
+}
