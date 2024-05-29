@@ -1,6 +1,7 @@
 import datetime
 from django.db import models
 from django.utils import timezone
+from django.contrib import admin
 
 # Create your models here.
 class Question(models.Model):
@@ -8,6 +9,16 @@ class Question(models.Model):
     pub_date = models.DateTimeField("date published")  #オプションとして人間可読なフィールド名も指定できます
     def __str__(self):
         return self.question_text
+
+    # was_published_recently のカラムヘッダは、デフォルトではメソッド名 (アンダースコアを空白に置き換えたもの) になっている
+    # 各行は戻り値の文字列表現
+    # 以下で改善される
+
+    @admin.display(
+        boolean=True,
+        ordering="pub_date",
+        description="Published recently?",
+    )
 
     def was_published_recently(self):
         now = timezone.now()
