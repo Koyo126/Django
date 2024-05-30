@@ -24,7 +24,9 @@ urlpatterns = [
     # view   --- jango がマッチする正規表現を見つけると、 Django は指定されたビュー関数を呼び出します。
 		# kwargs --- 任意のキーワード引数を辞書として対象のビューに渡せます。
 		# name   --- URL に名前付けをしておけば Django のどこからでも明確に参照でき、とくにテンプレートの中で有効
-		path("polls/", include("polls.urls")),  #http://localhost:8000/polls/
+		#path("polls/", include("polls.urls")),  #http://localhost:8000/polls/
+    path("polls/", include("django_polls.urls")),
+
     path('admin/', admin.site.urls),
 
     path("__debug__/", include("debug_toolbar.urls")),  #https://django-debug-toolbar.readthedocs.io/en/latest/installation.html

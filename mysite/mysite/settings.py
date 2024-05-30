@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',  #メッセージフレームワーク
     'django.contrib.staticfiles',  #静的ファイルの管理フレームワーク
 
-		"polls.apps.PollsConfig",  #PollsConfig クラスは、 polls/apps.py にある
+		#"polls.apps.PollsConfig",  #PollsConfig クラスは、 polls/apps.py にある
+    "django_polls.apps.PollsConfig",
 
     "debug_toolbar",  #https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
 ]
