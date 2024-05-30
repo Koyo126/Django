@@ -40,9 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',  #静的ファイルの管理フレームワーク
 
 		"polls.apps.PollsConfig",  #PollsConfig クラスは、 polls/apps.py にある
+
+    "debug_toolbar",  #https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",  #https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -50,6 +53,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+# The Debug Toolbar is shown only if your IP address is listed in Django’s INTERNAL_IPS setting.
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 ROOT_URLCONF = 'mysite.urls'

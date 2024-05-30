@@ -26,4 +26,6 @@ urlpatterns = [
 		# name   --- URL に名前付けをしておけば Django のどこからでも明確に参照でき、とくにテンプレートの中で有効
 		path("polls/", include("polls.urls")),  #http://localhost:8000/polls/
     path('admin/', admin.site.urls),
+
+    path("__debug__/", include("debug_toolbar.urls")),  #https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
 ]
